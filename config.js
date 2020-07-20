@@ -2,13 +2,13 @@
 
 module.exports = {
   url: "https://7sferry-gatsby-contentful-starters.netlify.app",
-  title: "Your blog title",
+  title: "Source of All Wealth",
   tagline: "Your tagline",
-  description: `Built by 7sferry. Get your gatsby contentful template starters here!`,
-  copyright: `© ${new Date().getFullYear()} Ferry Suhandri.`,
+  description: `Explaining the Source of All Wealth.`,
+  copyright: `© ${new Date().getFullYear()} Matt Malone.`,
   author: {
-    name: "Ferry S",
-    realName: "Ferry Suhandri",
+    name: "Matt Malone",
+    realName: "Matthew Malone",
     contacts: {
       linkedin: "https://www.linkedin.com/in/7sferry/",
       github: "https://github.com/7sferry",
