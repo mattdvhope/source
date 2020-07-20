@@ -13,17 +13,17 @@ import { useStaticQuery, graphql } from "gatsby";
 function SEO({ description, lang, meta, title, image, url }) {
   const { site } = useStaticQuery(
     graphql`
-        query {
-            site {
-                siteMetadata {
-                    title
-                    description
-                    author
-                    realName
-                    siteUrl
-                }
-            }
+      query {
+        site {
+          siteMetadata {
+            title
+            description
+            author
+            realName
+            siteUrl
+          }
         }
+      }
     `
   );
 
