@@ -1,12 +1,9 @@
 "use strict";
-require("dotenv").config();
 const siteConfig = require("./config");
-const contentfulConfig = {
-  spaceId: "eesa17cca13c",
-  accessToken: "slf8msWEC1IgEUx7rUXY4ysT1vFyc_MpCLSGZI9azt0",
-  // spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
-  // accessToken: process.env.GATSBY_CONTENTFUL_DELIVERY_API_ACCESS_TOKEN,
-};
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+const { spaceId, accessToken } = process.env;
 
 module.exports = {
   siteMetadata: {
@@ -38,10 +35,22 @@ module.exports = {
         sitemapSize: 5000,
       },
     },
+
     {
       resolve: "gatsby-source-contentful",
-      options: contentfulConfig,
+      options: {
+        spaceId,
+        accessToken
+      }
     },
+
+
+    // {
+    //   resolve: "gatsby-source-contentful",
+    //   options: contentfulConfig,
+    // },
+
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {
