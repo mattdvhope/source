@@ -30,11 +30,10 @@ const Layout = ({ children }) => {
               copyright
               contacts {
                 linkedin
-                github
                 facebook
                 resume
                 blogger
-                crystal
+                line
               }
             }
           }

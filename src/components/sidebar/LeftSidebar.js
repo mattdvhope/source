@@ -18,11 +18,10 @@ const LeftSidebar = () => {
               author
               contacts {
                 linkedin
-                github
                 facebook
                 blogger
-                crystal
                 resume
+                line
               }
             }
           }

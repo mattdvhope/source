@@ -11,11 +11,10 @@ module.exports = {
     realName: "Matthew Malone",
     contacts: {
       linkedin: "https://www.linkedin.com/in/matthew-malone-06183a74/",
-      github: "https://github.com/",
       facebook: "https://facebook.com/mattagape",
-      crystal: "https://www.crystalknows.com/p/ferry",
       blogger: "https://sourceofallwealth.com/",
-      resume: "https://ferry.netlify.com/resume/",
+      resume: "https://www.netlify.com/",
+      line: "https://line.me",
     },
   },
 };
