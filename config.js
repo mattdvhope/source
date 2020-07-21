@@ -3,7 +3,7 @@
 module.exports = {
   url: "https://sourceofallwealth.com/",
   title: "Source of All Wealth",
-  tagline: "Your tagline",
+  tagline: "A conversation about wealth, money, power and God",
   description: `Explaining the Source of All Wealth.`,
   copyright: `© ${new Date().getFullYear()} Matt Malone.`,
   author: {
