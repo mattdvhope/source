@@ -29,7 +29,8 @@ function SEO({ description, lang, meta, title, image, url }) {
 
   const metadata = site.siteMetadata;
   const metaDescription = description ? `7sferry. ${description}` : metadata.description;
-  const metaImage = image ? `https:${image}` : `${metadata.siteUrl}/ferry-suhandri.jpg`;
+  // const metaImage = image ? `https:${image}` : `${metadata.siteUrl}/ferry-suhandri.jpg`;
+  const metaImage = `https://source-of-all-wealth.s3-ap-southeast-1.amazonaws.com/social-image.jpg`;
   const metaUrl = url || metadata.siteUrl;
 
   return (
