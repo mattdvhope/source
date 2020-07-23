@@ -8,6 +8,7 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Comment from "../components/Comment";
 import heroStyles from "../components/hero.module.css";
+import './blog-post.css';
 
 class BlogPostTemplate extends React.Component {
   constructor(props) {
@@ -56,6 +57,7 @@ class BlogPostTemplate extends React.Component {
                   __html: post.body.childMarkdownRemark.html,
                 }}
               />
+              <link href="https://fonts.googleapis.com/css?family=Quicksand|Oswald:400,700" rel="stylesheet"/>
             </div>
             <Share title={post.title} siteName={site.title} url={url} />
             <button onClick={this.handleClick}>Show comment</button>
