@@ -13,6 +13,11 @@ export const menus = Array.of(
     icon: <FaHome title={"Homepage"} size={DEFAULT_ICON_SIZE} />,
     text: "Home",
   },
+  // {
+  //   link: "/about",
+  //   icon: <FaHome title={"About page"} size={DEFAULT_ICON_SIZE} />,
+  //   text: "About",
+  // },
   {
     link: "/archive",
     icon: <FaArchive title={"Archive page"} size={DEFAULT_ICON_SIZE} />,
