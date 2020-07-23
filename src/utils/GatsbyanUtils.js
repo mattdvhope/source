@@ -36,5 +36,5 @@ export const getPlurals = count => {
 
 export const PAGE_COUNT = 5;
 
-export const DEFAULT_ICON_SIZE = 20;
+export const DEFAULT_ICON_SIZE = 22;
 

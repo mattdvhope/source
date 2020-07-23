@@ -53,7 +53,8 @@ body.medium-zoom--opened #___gatsby{
 
 
 .text-side{
-    color: #42b72a;
+    font-family: Quicksand;
+    color: #DFAA76;
     transition: 9s;
 }
 
