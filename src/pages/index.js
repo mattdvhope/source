@@ -51,8 +51,8 @@ class IndexPage extends React.Component {
                         fixed={post.node.heroImage.fixed}
                       />
                     )}
-                    <p>
-                      {post.node.body.childMarkdownRemark.excerpt}
+                    <p style={{ textAlign: `left` }}>
+                      {post.node.childContentfulBlogPostDescriptionTextNode.description}
                       <Link to={`/blog/${post.node.slug}`} className="text-primary">
                         <small className="d-inline ml-1"> Read more</small>
                       </Link>
@@ -88,6 +88,10 @@ export const pageQuery = graphql`
               excerpt(pruneLength: 300)
             }
           }
+          childContentfulBlogPostDescriptionTextNode {
+            description
+          }
+
           tags
           title
           publishDate
