@@ -36,7 +36,7 @@ class BlogPostTemplate extends React.Component {
         <SEO title={post.title} description={post.description.description} image={imageURL} url={url} />
         <div className="post-main">
           <div className="blog-content">
-            <h3 className="title mt-4" style={{ fontSize: `130%`, fontFamily: `Quicksand`}}>{post.title}</h3>
+            <h3 className="title mt-4">{post.title}</h3>
             <div className="title text-info mb-2">
               <span className="page-info">{getPublishDateTime(post.publishDate)}</span>
               <span className="page-info">
@@ -57,7 +57,6 @@ class BlogPostTemplate extends React.Component {
                   __html: post.body.childMarkdownRemark.html,
                 }}
               />
-              <link href="https://fonts.googleapis.com/css?family=Quicksand|Oswald:400,700" rel="stylesheet"/>
             </div>
             <Share title={post.title} siteName={site.title} url={url} />
             <button onClick={this.handleClick}>Show comment</button>

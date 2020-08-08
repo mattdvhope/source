@@ -74,6 +74,7 @@ const Layout = ({ children }) => {
                 <hr />
                 <p className="d-inline my-emoji">{metadata.copyright}</p>
               </footer>
+              <link href="https://fonts.googleapis.com/css?family=Quicksand|Oswald:400,700" rel="stylesheet"/>
             </div>
           </>
         );
