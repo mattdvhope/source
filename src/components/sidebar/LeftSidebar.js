@@ -42,6 +42,7 @@ const LeftSidebar = () => {
             <div className="tech-tags mt-4">
               <TechTags posts={data.allContentfulBlogPost.edges} />
             </div>
+            <link href="https://fonts.googleapis.com/css?family=Quicksand|Oswald:400,700" rel="stylesheet"/>
           </div>
         </>
       )}
