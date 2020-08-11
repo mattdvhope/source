@@ -8,7 +8,6 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import Comment from "../components/Comment";
 import heroStyles from "../components/hero.module.css";
-import './blog-post.css';
 
 class BlogPostTemplate extends React.Component {
   constructor(props) {
