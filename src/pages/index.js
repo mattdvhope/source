@@ -6,6 +6,7 @@ import SEO from "../components/seo";
 
 import Banner from "../components/banner";
 import About from "../components/about";
+import Beginning from "../components/beginning";
 import Service from "../components/service";
 import Work from "../components/work";
 import Blogs from "../components/blogs";
@@ -19,7 +20,13 @@ const IndexPage = ({ data }) => (
       title={data.contentfulAboutMe.designation}
       keywords={[`Matt`, `Fullstack Developer`, `Developer`]}
     />
-    <Banner data={data.contentfulAboutMe}></Banner>
+    {/* <Banner data={data.contentfulAboutMe}></Banner>  */}
+
+    {data.contentfulSiteInformation.menus
+      .filter(item => item === "Beginning")
+      .map(t => {
+        return <Beginning key="Beginning" data={data.contentfulBeginning}></Beginning>;
+      })}
 
     {data.contentfulSiteInformation.menus
       .filter(item => item === "About")
@@ -28,15 +35,15 @@ const IndexPage = ({ data }) => (
       })}
 
     {data.contentfulSiteInformation.menus
-      .filter(item => item === "Service")
-      .map(t => {
-        return <Service key="Service" data={data.allContentfulService}></Service>;
-      })}
-
-    {data.contentfulSiteInformation.menus
       .filter(item => item === "Blogs")
       .map(t => {
         return <Blogs key="Blogs" data={data.allContentfulBlogs}></Blogs>;
+      })}
+
+    {data.contentfulSiteInformation.menus
+      .filter(item => item === "Service")
+      .map(t => {
+        return <Service key="Service" data={data.allContentfulService}></Service>;
       })}
 
     {data.contentfulSiteInformation.menus
@@ -71,6 +78,33 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query AboutQuery {
+
+
+    contentfulBeginning {
+      flowingFromTheSource {
+        file {
+          url
+        }
+        fluid {
+          base64
+          aspectRatio
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          sizes
+        }
+      }
+      invitationToTheJourney
+      beginningTheJourney {
+        childMarkdownRemark {
+          html
+        }
+      }
+    }
+
+
+
     contentfulAboutMe {
       name
       photo {
