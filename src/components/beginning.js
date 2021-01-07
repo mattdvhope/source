@@ -1,5 +1,6 @@
 import React from "react";
 import Img from "gatsby-image";
+import { Link } from "gatsby";
 
 const Header = ({ data }) => (
   <div className="section" id="About">
@@ -24,6 +25,7 @@ const Header = ({ data }) => (
                 __html: data.beginningTheJourney.childMarkdownRemark.html
               }}
             />
+            <p style={{ fontSize: `104%` }}>Your journey begins when you <Link to="/blogs">open this door</Link>.</p>
           </div>
         </div>
       </div>
