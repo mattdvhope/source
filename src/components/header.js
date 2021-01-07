@@ -44,9 +44,9 @@ export default class Header extends Component {
                     });
                   }}
                 >
-                  <li key="beginning">
+              {/* <li key="beginning">
                     <Link to="/#beginning">Beginning</Link>
-                  </li>
+                  </li>  */}
                   {data.menus
                     .filter(item => item === "About")
                     .map(t => {
