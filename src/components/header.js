@@ -24,7 +24,7 @@ export default class Header extends Component {
                     fluid={data.logo.fluid}
                     objectFit="cover"
                     objectPosition="50% 50%"
-                    style={{ width: `4.3em`, marginTop: `-0.9em`, marginBottom: `-0.9em`}}
+                    style={{ width: `4.3em`, marginTop: `-0.9em`, marginBottom: `-0.9em`, borderRadius: `8%`}}
                   />
                 ) : (
                   <span>{data.siteName}</span>
