@@ -1,5 +1,6 @@
-import { Link } from "gatsby";
 import React, { Component } from "react";
+import { Link } from "gatsby";
+import Img from "gatsby-image";
 
 export default class Header extends Component {
   constructor(props) {
@@ -18,8 +19,13 @@ export default class Header extends Component {
           <div className="header-main">
             <div className="logo">
               <Link to="/">
-                {data.logo.file.url ? (
-                  <img src={data.logo.file.url} alt="logo" />
+                {data.logo.fluid ? (
+                  <Img
+                    fluid={data.logo.fluid}
+                    objectFit="cover"
+                    objectPosition="50% 50%"
+                    style={{ width: `4.3em`, marginTop: `-0.9em`, marginBottom: `-0.9em`}}
+                  />
                 ) : (
                   <span>{data.siteName}</span>
                 )}

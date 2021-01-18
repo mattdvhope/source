@@ -21,8 +21,14 @@ const Layout = ({ children, header }) => (
           siteName
           siteDescription
           logo {
-            file {
-              url
+            fluid(maxWidth: 70) {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
             }
           }
           menus
