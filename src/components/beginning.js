@@ -2,7 +2,7 @@ import React from "react";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
 
-const Header = ({ data }) => (
+const Beginning = ({ data }) => (
   <div className="section" id="About">
     <div className="container">
       <br/>
@@ -33,4 +33,4 @@ const Header = ({ data }) => (
   </div>
 );
 
-export default Header;
+export default Beginning;
