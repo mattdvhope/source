@@ -9,7 +9,7 @@ import SEO from "../components/seo";
 
 export default class Blogs extends Component {
   render() {
-    const { data } = this.props;
+    const data = this.props.data.contentfulAboutMe;
     return (
       <Layout>
         <SEO
@@ -21,37 +21,26 @@ export default class Blogs extends Component {
             <div className="section-head">
               <h1 className="line-heading h2">What is this?</h1>
             </div>
-            <ul
-              className={`blogs-list ${
-                data.allContentfulBlogs.edges.length < 5 ? "few-blogs" : ""
-              }`}
-            >
-              {data.allContentfulBlogs.edges.map((item, index) => {
-                return (
-                  <li key={index} className="item">
-                    <div className="inner">
-                      <Link className="link" to={`/${item.node.slug}`} />
-                      {item.node.featureImage ? (
-                        <Img
-                          fluid={item.node.featureImage.fluid}
-                          objectFit="cover"
-                          objectPosition="50% 50%"
-                        />
-                      ) : (
-                        <div className="no-image"></div>
-                      )}
-                      <div className="details">
-                        <h3 className="title">{item.node.title}</h3>
-                        <span className="date">
-                          <i className="fas fa-calendar-alt"></i>{" "}
-                          {moment(item.node.createdAt).format("LL")}
-                        </span>
-                      </div>
-                    </div>
-                  </li>
-                );
-              })}
-            </ul>
+            <div className="about-main row">
+              <div className="left col-md-5 col-lg-4 mb-3">
+                <Img
+                  fluid={data.photo.fluid}
+                  objectFit="cover"
+                  objectPosition="top center"
+                />
+              </div>
+              <div className="left col-md-7 col-lg-8">
+                <div className="about-details">
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html: data.description.childMarkdownRemark.html
+                    }}
+                  />
+                </div>
+              </div>
+            </div>
+            <br/>
+            <br/>
           </div>
         </div>
       </Layout>
@@ -61,23 +50,25 @@ export default class Blogs extends Component {
 
 export const pageQuery = graphql`
   query WhatQuery {
-    allContentfulBlogs(sort: {fields: createdAt, order: DESC}) {
-      edges {
-        node {
-          title
-          slug
-          featureImage {
-            fluid(maxWidth: 1500) {
-              base64
-              aspectRatio
-              src
-              srcSet
-              srcWebp
-              srcSetWebp
-              sizes
-            }
-          }
-          createdAt
+    contentfulAboutMe {
+      name
+      photo {
+        file {
+          url
+        }
+        fluid {
+          base64
+          aspectRatio
+          src
+          srcSet
+          srcWebp
+          srcSetWebp
+          sizes
+        }
+      }
+      description {
+        childMarkdownRemark {
+          html
         }
       }
     }
