@@ -118,7 +118,7 @@ h2:after,
 .blog-post .details img{margin:0 auto;float:none;display:block;margin-bottom:30px}
 pre{margin-bottom:0}
 .banner .gatsby-image-wrapper{height:100vh;width:100%}
-.about-main .left .gatsby-image-wrapper{width:100%;height:550px}
+.about-main .left .gatsby-image-wrapper{width:100%;height:300px}
 .about-main .left .gatsby-image-wrapper img{object-position:top center!important}
 .beginning-main .left .gatsby-image-wrapper{width:100%;height:18em}
 .beginning-main .left .gatsby-image-wrapper img{object-position:top center!important}
@@ -222,5 +222,5 @@ code{background-color:#333;border-radius:3px;margin-bottom:30px;display:block;pa
     .blogs-list .item .inner .details .title{font-size:20px}
 }
 @media only screen and (max-width:480px){
-    .about-main .left .gatsby-image-wrapper{height:400px}
+    .about-main .left .gatsby-image-wrapper{height:200px}
 }
