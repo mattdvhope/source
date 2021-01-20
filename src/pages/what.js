@@ -7,16 +7,16 @@ import moment from "moment";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-export default class Blogs extends Component {
+export default class What extends Component {
   render() {
     const data = this.props.data.contentfulAboutMe;
     return (
       <Layout>
         <SEO
-          title="Blogs"
-          keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`, `Blogs`]}
+          title="What is this?"
+          keywords={[`Tertullian`, `Assembler of knowledge`, `Developer`, `Pages`]}
         />
-        <div className="site-container blogs-page" id="Blogs">
+        <div className="site-container blogs-page" id="What">
           <div className="container">
             <div className="section-head">
               <h1 className="line-heading h2">What is this?</h1>
