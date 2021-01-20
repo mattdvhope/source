@@ -25,7 +25,7 @@ const Beginning = ({ data }) => (
                 __html: data.beginningTheJourney.childMarkdownRemark.html
               }}
             />
-            <p style={{ fontSize: `104%` }}>Your journey begins when you <Link to="/stepOut">open this door</Link>.</p>
+            <p style={{ fontSize: `104%` }}><Link to="/stepOut">Step out here and find it</Link>.</p>
           </div>
         </div>
       </div>
