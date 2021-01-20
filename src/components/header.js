@@ -54,7 +54,7 @@ export default class Header extends Component {
                     <Link to="/what">What is this?</Link>
                   </li>
                   <li key="stepOut">
-                    <Link to="/stepOut">Step Out</Link>
+                    <Link to="/stepOut">Take a Step</Link>
                   </li>
                   {data.menus
                     .filter(item => item === "About")
@@ -138,7 +138,7 @@ export default class Header extends Component {
                     <Link to="/what">What is this?</Link>
                   </li>
                   <li key="stepOut">
-                    <Link to="/stepOut">Step Out</Link>
+                    <Link to="/stepOut">Take a Step</Link>
                   </li>
                   {data.menus
                     .filter(item => item === "Blogs")
