@@ -35,6 +35,12 @@ const IndexPage = ({ data }) => (
       })}
 
     {data.contentfulSiteInformation.menus
+      .filter(item => item === "Steps")
+      .map(t => {
+        return <Steps key="Steps" data={data.allContentfulSteps}></Steps>;
+      })}
+
+    {data.contentfulSiteInformation.menus
       .filter(item => item === "Blogs")
       .map(t => {
         return <Blogs key="Blogs" data={data.allContentfulBlogs}></Blogs>;

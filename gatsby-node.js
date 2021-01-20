@@ -3,11 +3,11 @@ var path = require("path");
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators;
   return new Promise((resolve, reject) => {
-    const blogPostTemplate = path.resolve("src/templates/blog-post.js");
+    const stepPostTemplate = path.resolve("src/templates/step-post.js");
     resolve(
       graphql(`
         {
-          allContentfulBlogs(limit: 100) {
+          allContentfulSteps(limit: 100) {
             edges {
               node {
                 id
@@ -20,10 +20,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         if (result.errors) {
           reject(result.errors);
         }
-        result.data.allContentfulBlogs.edges.forEach(edge => {
+        result.data.allContentfulSteps.edges.forEach(edge => {
           createPage({
             path: edge.node.slug,
-            component: blogPostTemplate,
+            component: stepPostTemplate,
             context: {
               slug: edge.node.slug
             }
