@@ -19,7 +19,7 @@ export default class Blogs extends Component {
         <div className="site-container blogs-page" id="Blogs">
           <div className="container">
             <div className="section-head">
-              <h3 className="line-heading h3">Choose where to step out....</h3>
+              <h3 className="line-heading h3">Choose which step to take....</h3>
             </div>
             <ul
               className={`blogs-list ${
