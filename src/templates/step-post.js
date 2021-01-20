@@ -28,6 +28,7 @@ export default class stepPost extends Component {
       slug: data.slug
     };
 
+console.log(data.createdAt)
     return (
       <Layout>
         <SEO
@@ -65,7 +66,7 @@ export default class stepPost extends Component {
               />
             </div>
             
-            <Share
+        {/* <Share
               socialConfig={{
                 ...socialConfigss.site.siteMetadata.twiteerhandletitle,
                 config: {
@@ -77,7 +78,7 @@ export default class stepPost extends Component {
             <DiscussionEmbed
               shortname={disqusShortname}
               config={disqusConfig}
-            />
+            />  */}    
           </div>
         </div>
       </Layout>
