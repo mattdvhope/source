@@ -13,8 +13,8 @@ export default class Blogs extends Component {
     return (
       <Layout>
         <SEO
-          title="Blogs"
-          keywords={[`Rohit Gupta`, `Frontend Developer`, `Developer`, `Blogs`]}
+          title="Step Out"
+          keywords={[`Tertullian`, `Assembler of knowledge`, `Developer`, `Pages`]}
         />
         <div className="site-container blogs-page" id="Blogs">
           <div className="container">
