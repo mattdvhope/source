@@ -9,6 +9,7 @@ import About from "../components/about";
 import Beginning from "../components/beginning";
 import Service from "../components/service";
 import Work from "../components/work";
+import Steps from "../components/steps";
 import Blogs from "../components/blogs";
 import Testimonial from "../components/testimonial";
 import Contact from "../components/contact";
@@ -167,6 +168,28 @@ export const pageQuery = graphql`
         }
       }
     }
+
+    allContentfulSteps(limit: 5, sort: {fields: createdAt, order: DESC}) {
+      edges {
+        node {
+          title
+          slug
+          featureImage {
+            fluid(maxWidth: 600) {
+              base64
+              aspectRatio
+              src
+              srcSet
+              srcWebp
+              srcSetWebp
+              sizes
+            }
+          }
+          createdAt
+        }
+      }
+    }
+
     allContentfulBlogs(limit: 5, sort: {fields: createdAt, order: DESC}) {
       edges {
         node {
@@ -187,6 +210,7 @@ export const pageQuery = graphql`
         }
       }
     }
+
     allContentfulTestimonials {
       edges {
         node {

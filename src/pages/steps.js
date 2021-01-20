@@ -7,7 +7,7 @@ import moment from "moment";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
-export default class Blogs extends Component {
+export default class Steps extends Component {
   render() {
     const { data } = this.props;
     return (
@@ -16,17 +16,17 @@ export default class Blogs extends Component {
           title="Step Out"
           keywords={[`Tertullian`, `Assembler of knowledge`, `Developer`, `Pages`]}
         />
-        <div className="site-container blogs-page" id="Blogs">
+        <div className="site-container steps-page" id="Steps">
           <div className="container">
             <div className="section-head">
               <h3 className="line-heading h3">Take a step....</h3>
             </div>
             <ul
-              className={`blogs-list ${
-                data.allContentfulBlogs.edges.length < 5 ? "few-blogs" : ""
+              className={`steps-list ${
+                data.allContentfulSteps.edges.length < 5 ? "few-steps" : ""
               }`}
             >
-              {data.allContentfulBlogs.edges.map((item, index) => {
+              {data.allContentfulSteps.edges.map((item, index) => {
                 return (
                   <li key={index} className="item">
                     <div className="inner">
@@ -60,8 +60,8 @@ export default class Blogs extends Component {
 }
 
 export const pageQuery = graphql`
-  query BlogsQuery {
-    allContentfulBlogs(sort: {fields: createdAt, order: DESC}) {
+  query StepsQuery {
+    allContentfulSteps(sort: {fields: createdAt, order: DESC}) {
       edges {
         node {
           title
