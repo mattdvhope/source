@@ -36,7 +36,7 @@ export default class What extends Component {
                       __html: data.description.childMarkdownRemark.html
                     }}
                   />
-                  <p style={{ fontSize: `115%` }}><Link to="/blogs">Open this door</Link> to find it.</p>
+                  <p style={{ fontSize: `115%` }}><Link to="/stepOut">Open this door</Link> to find it.</p>
                 </div>
               </div>
             </div>
