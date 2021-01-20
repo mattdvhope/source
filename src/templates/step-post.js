@@ -10,7 +10,7 @@ import Share from "../components/share";
 
 export default class stepPost extends Component {
   render() {
-    const data = this.props.data.contentfulBlogs;
+    const data = this.props.data.contentfulSteps;
     const disqusShortname = "RohitGupta";
     const disqusConfig = {
       identifier: data.id,
@@ -39,7 +39,7 @@ export default class stepPost extends Component {
             `${data.title}`
           ]}
         />
-        <div className="site-container blog-post">
+        <div className="site-container step-post">
           <div className="container">
             {data.featureImage ? (
               <Img
@@ -87,7 +87,7 @@ export default class stepPost extends Component {
 
 export const pageQuery = graphql`
   query SingleStepQuery($slug: String!) {
-    contentfulBlogs(slug: { eq: $slug }) {
+    contentfulSteps(slug: { eq: $slug }) {
       id
       title
       slug
