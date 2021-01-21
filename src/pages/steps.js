@@ -19,7 +19,7 @@ export default class Steps extends Component {
         <div className="site-container steps-page" id="Steps">
           <div className="container">
             <div className="section-head">
-              <h3 className="line-heading h3">Take a step....</h3>
+              <h3 className="line-heading h3">Steps....</h3>
             </div>
             <ul
               className={`steps-list ${
