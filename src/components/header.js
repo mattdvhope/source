@@ -56,6 +56,9 @@ export default class Header extends Component {
                   <li key="step">
                     <Link to="/steps">Steps</Link>
                   </li>
+                  <li key="tags">
+                    <Link to="/tags">Tags</Link>
+                  </li>
                   {data.menus
                     .filter(item => item === "About")
                     .map(t => {
@@ -148,6 +151,9 @@ export default class Header extends Component {
                   </li>
                   <li key="step">
                     <Link to="/steps">Steps</Link>
+                  </li>
+                  <li key="tags">
+                    <Link to="/tags">Tags</Link>
                   </li>
                   {data.menus
                     .filter(item => item === "Steps")
