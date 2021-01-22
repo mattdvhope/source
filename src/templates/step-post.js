@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
 import Img from "gatsby-image";
 import moment from "moment";
 import { DiscussionEmbed } from "disqus-react";
+import kebabCase from "lodash/kebabCase"
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -11,6 +12,7 @@ import Share from "../components/share";
 export default class stepPost extends Component {
   render() {
     const data = this.props.data.contentfulSteps;
+    const tagData = this.props.data.allContentfulSteps;
     const disqusShortname = "RohitGupta";
     const disqusConfig = {
       identifier: data.id,
@@ -65,6 +67,18 @@ console.log(data.createdAt)
                 }}
               />
             </div>
+            <div className="left col-md-7 col-lg-8">
+              <h3>Tags for "{data.title}"...</h3>
+              <ul>
+                {data.tags.map(tag => (
+                  <li key={tag}>
+                    <Link to={`/tags/${kebabCase(tag)}/`}>
+                      {tag}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
             
         {/* <Share
               socialConfig={{
@@ -108,8 +122,16 @@ export const pageQuery = graphql`
           html
         }
       }
+      tags
       createdAt
     }
+
+    allContentfulSteps {
+      group(field: tags) {
+        totalCount
+      }
+    }
+
     contentfulSiteInformation {
       siteUrl
       twiteerHandle
