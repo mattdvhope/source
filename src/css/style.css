@@ -266,7 +266,7 @@ code{background-color:#333;border-radius:3px;margin-bottom:30px;display:block;pa
     .banner .banner-details h1{font-size:34px;margin-bottom:10px}
     .banner .banner-details span{font-size:19px;margin-bottom:0}
     .blog-post .feature-img{height:300px}
-    .step-post .feature-img{height:135px} /* changed height!!! ..from blog */
+    .step-post .feature-img{height:200px} /* changed height!!! ..from blog */
 
     .post-social button{margin-bottom:10px;padding:5px 10px!important;font-size:12px!important}
     .blogs-list .item .inner .details .date{font-size:12px}
