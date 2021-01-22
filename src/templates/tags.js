@@ -6,7 +6,7 @@ const Tags = ({ pageContext, data }) => {
 
   const { tag } = pageContext
   const { edges, totalCount } = data.allContentfulSteps
-  const tagHeader = `${totalCount} post${
+  const tagHeader = `${totalCount} step${
     totalCount === 1 ? "" : "s"
   } tagged with "${tag}"`
 
