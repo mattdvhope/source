@@ -3,8 +3,6 @@ import { Link, graphql } from "gatsby"
 import kebabCase from "lodash/kebabCase"
 import Layout from "../components/layout";
 
-// Components
-
 const TagsPage = ({ data }) => (
   <Layout>
     <div>
@@ -26,7 +24,6 @@ export default TagsPage
 
 export const pageQuery = graphql`
   query tagsPageQuery {
-    
     allContentfulSteps(limit: 200) {
       totalCount
       edges {
@@ -39,6 +36,5 @@ export const pageQuery = graphql`
         fieldValue
       }
     }
-    
   }
 `
