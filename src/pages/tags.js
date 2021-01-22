@@ -3,6 +3,18 @@ import { Link, graphql } from "gatsby"
 import kebabCase from "lodash/kebabCase"
 import Layout from "../components/layout";
 
+const tagList = (data) => (
+  <ul>
+    {data.allContentfulSteps.group.map(tag => (
+      <li key={tag.fieldValue}>
+        <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
+          {tag.fieldValue} ({tag.totalCount})
+        </Link>
+      </li>
+    ))}
+  </ul>
+)
+
 const TagsPage = ({ data }) => (
   <Layout>
     <div className="site-container blogs-page" id="What">
@@ -12,15 +24,7 @@ const TagsPage = ({ data }) => (
         </div>
         <div className="about-main row">
           <div className="left col-md-7 col-lg-8">
-            <ul>
-              {data.allContentfulSteps.group.map(tag => (
-                <li key={tag.fieldValue}>
-                  <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
-                    {tag.fieldValue} ({tag.totalCount})
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            {tagList(data)}
           </div>
         </div>
         <br/>
