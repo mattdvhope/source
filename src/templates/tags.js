@@ -2,12 +2,7 @@ import React, { Component } from "react";
 import { Link, graphql } from "gatsby"
 import Layout from "../components/layout";
 
-//<<<<< Page Template for '/tags/{tag}' >>>>>>>
-
 const Tags = ({ pageContext, data }) => {
-
-  console.log(pageContext);
-  console.log(data);
 
   const { tag } = pageContext
   const { edges, totalCount } = data.allContentfulSteps
@@ -23,9 +18,10 @@ const Tags = ({ pageContext, data }) => {
           {edges.map(({ node }) => {
             const { slug } = node
             const { title } = node
+            console.log(slug)
             return (
               <li key={slug}>
-                <Link to={slug}>{title}</Link>
+                <Link to={`/${slug}`}>{title}</Link>
               </li>
             )
           })}
