@@ -12,25 +12,33 @@ const Tags = ({ pageContext, data }) => {
 
   return (
     <Layout>
-      <div>
-        <h1>{tagHeader}</h1>
-        <ul>
-          {edges.map(({ node }) => {
-            const { slug } = node
-            const { title } = node
-            console.log(slug)
-            return (
-              <li key={slug}>
-                <Link to={`/${slug}`}>{title}</Link>
-              </li>
-            )
-          })}
-        </ul>
-        {/*
-                This links to a page that does not yet exist.
-                You'll come back to it!
-              */}
-        <Link to="/tags">All tags</Link>
+      <div className="site-container blogs-page" id="What">
+        <div className="container">
+          <div className="section-head">
+            <h1 className="line-heading h2">{tagHeader}</h1>
+          </div>
+          <div className="about-main row">
+            <div className="left col-md-7 col-lg-8">
+              <ul>
+                {edges.map(({ node }) => {
+                  const { slug } = node
+                  const { title } = node
+                  console.log(slug)
+                  return (
+                    <li key={slug}>
+                      <Link to={`/${slug}`}>{title}</Link>
+                    </li>
+                  )
+                })}
+              </ul>
+              <Link to="/tags">All tags</Link>
+            </div>
+
+
+          </div>
+          <br/>
+          <br/>
+        </div>
       </div>
     </Layout>
   )
