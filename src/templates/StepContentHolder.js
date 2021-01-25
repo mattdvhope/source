@@ -23,9 +23,7 @@ const ImgAndLinksHolder = ({data}) => {
               objectPosition="50% 50%"
             />
     } 
-
   }
-
 
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
@@ -66,9 +64,6 @@ const ImgAndLinksHolder = ({data}) => {
         />
         {ButtonProvidedIfNeeded()}
       </div>
-
-  {/* <div style={{position: `relative`, width: `150px`}} className="mcwidget-embed" data-widget-id="13149017"></div>
-      <hr/>    */}
       <CtaUnderVideo data={data} />
     </div>
   )
