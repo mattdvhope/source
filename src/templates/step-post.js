@@ -109,6 +109,18 @@ export const pageQuery = graphql`
       }
       tags
       createdAt
+
+      promptsForResponse {
+        promptContent {
+          childMarkdownRemark {
+            html
+          }
+        }
+        buttonInvitation
+        orderNumber
+      }
+
+
     }
 
     allContentfulSteps {
