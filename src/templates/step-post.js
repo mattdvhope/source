@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link, graphql } from "gatsby";
-import Img from "gatsby-image";
 import moment from "moment";
 import { DiscussionEmbed } from "disqus-react";
 import kebabCase from "lodash/kebabCase"
@@ -9,7 +8,10 @@ import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Share from "../components/share";
 
+import StepContentHolder from "./StepContentHolder"
+
 export default class stepPost extends Component {
+
   render() {
     const data = this.props.data.contentfulSteps;
     const tagData = this.props.data.allContentfulSteps;
@@ -43,29 +45,7 @@ export default class stepPost extends Component {
         />
         <div className="site-container step-post">
           <div className="container">
-            {data.featureImage ? (
-              <Img
-                className="feature-img"
-                fluid={data.featureImage.fluid}
-                objectFit="cover"
-                objectPosition="50% 50%"
-              />
-            ) : (
-              <div className="no-image"></div>
-            )}
-
-            <div className="details">
-              <h1 className="title">{data.title}</h1>
-              <span className="date">
-                <i className="fas fa-calendar-alt"></i>{" "}
-                {moment(data.createdAt).format("LL")}
-              </span>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: data.description.childMarkdownRemark.html
-                }}
-              />
-            </div>
+            <StepContentHolder data={data} />
             <div className="left col-md-7 col-lg-8">
               <h3>Tags for "{data.title}"...</h3>
               <ul>
@@ -91,6 +71,8 @@ export const pageQuery = graphql`
       id
       title
       slug
+      ctaFirst
+      youtubeUrl
       featureImage {
         fluid(maxWidth: 1500) {
           base64
@@ -118,6 +100,12 @@ export const pageQuery = graphql`
         }
         buttonInvitation
         orderNumber
+      }
+
+      ctaLast {
+        childMarkdownRemark {
+          html
+        }
       }
 
 
