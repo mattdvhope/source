@@ -55,7 +55,6 @@ const ImgAndLinksHolder = ({data}) => {
     <div id="ImgAndLinksHolder" className="container-fluid">
       <div>
         {ImgOrVideo()}
-        
         <hr/>
         <div
           dangerouslySetInnerHTML={{
