@@ -25,27 +25,30 @@ const ImgAndLinksHolder = ({data}) => {
     } 
   }
 
+  const GoToNextPrompt = () => {setPrompt(promptsElementNum + 1); window.scrollTo(0, 0);}
+  const GoToPreviousPrompt = () => {setPrompt(promptsElementNum - 1); window.scrollTo(0, 0);}
+
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
       return (
         <div>
           <hr/>
-          <ButtonForPrompt onClick={() => setPrompt(promptsElementNum + 1)} buttonWords={buttonWords} />
+          <ButtonForPrompt onClick={() => GoToNextPrompt()} buttonWords={buttonWords} />
           <hr/>
         </div>)
     } else if (promptsElementNum !== prompts.length-1) {
       return (
         <div>
           <hr/>
-          <h2 onClick={() => setPrompt(promptsElementNum - 1)} >⬅️&nbsp;</h2>
-          <ButtonForPrompt onClick={() => setPrompt(promptsElementNum + 1)} buttonWords={buttonWords} />
+          <h2 onClick={() => GoToPreviousPrompt()} >⬅️&nbsp;</h2>
+          <ButtonForPrompt onClick={() => GoToNextPrompt()} buttonWords={buttonWords} />
           <hr/>
         </div>)
     } else if (promptsElementNum === prompts.length-1) {
       return (
         <div>
           <br/>
-          <h1 onClick={() => setPrompt(promptsElementNum - 1)} >⬅️&nbsp;</h1>
+          <h1 onClick={() => GoToPreviousPrompt()} >⬅️&nbsp;</h1>
           <hr/>
         </div>)
     }
