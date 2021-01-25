@@ -58,8 +58,9 @@ const ImgAndLinksHolder = ({data}) => {
     <div id="ImgAndLinksHolder" className="container-fluid">
       <div>
         {ImgOrVideo()}
-        <hr/>
+        <div>Scroll in this box if necessary</div>
         <div
+          style={{width:`100%`,height:`150px`,lineHeight:`1.5em`,overflow:`scroll`,padding:`5px`,backgroundColor:`#FCFADD`,color:`#714D03`,border:`4px double #DEBB07`}}
           dangerouslySetInnerHTML={{
             __html: prompts[promptsElementNum].promptContent.childMarkdownRemark.html
           }}
