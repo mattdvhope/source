@@ -30,7 +30,6 @@ export default class stepPost extends Component {
       slug: data.slug
     };
 
-console.log(data.createdAt)
     return (
       <Layout>
         <SEO
@@ -79,20 +78,6 @@ console.log(data.createdAt)
                 ))}
               </ul>
             </div>
-            
-        {/* <Share
-              socialConfig={{
-                ...socialConfigss.site.siteMetadata.twiteerhandletitle,
-                config: {
-                  url: `${siteurl}${socialConfigss.slug}`,
-                  title: `${socialConfigss.title}`
-                }
-              }}
-            />
-            <DiscussionEmbed
-              shortname={disqusShortname}
-              config={disqusConfig}
-            />  */}    
           </div>
         </div>
       </Layout>
