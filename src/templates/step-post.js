@@ -6,7 +6,6 @@ import { DiscussionEmbed } from "disqus-react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Share from "../components/share";
-import Pagination from "../components/Pagination";
 
 import StepContentHolder from "./StepContentHolder"
 import TagsInStepPost from "./TagsInStepPost"
