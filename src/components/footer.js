@@ -11,7 +11,7 @@ const Footer = ({ siteName }) => {
 	  if (/steps/.test(window.location.href)) {
 			return setFooterLinkAndTitle(<Link to="/" style={{ color: `#fff`}}>{siteName}</Link>);
 	  }
-  }, []); // [] will prevent infinite loop!!! see https://medium.com/@andrewmyint/infinite-loop-inside-useeffect-react-hooks-6748de62871
+  }, []); // [] will prevent infinite loop! https://medium.com/@andrewmyint/infinite-loop-inside-useeffect-react-hooks-6748de62871
 
   return (
     <div className="site-footer" id="footer">
