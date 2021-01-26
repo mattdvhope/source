@@ -47,7 +47,6 @@ export default class stepPost extends Component {
           <div className="container">
             <StepContentHolder data={data} />
             <div className="left col-md-7 col-lg-8">
-              <h3>Tags for "{data.title}"...</h3>
               <ul>
                 {data.tags.map(tag => (
                   <li key={tag}>
