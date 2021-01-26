@@ -66,10 +66,8 @@ const ImgAndLinksHolder = ({data}) => {
         />
         {ButtonProvidedIfNeeded()}
       </div>
-  {/* <CtaUnderVideo data={data} />  */}
     </div>
   )
-
 }
 
 export default ImgAndLinksHolder
