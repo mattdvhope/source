@@ -12,10 +12,8 @@ import StepContentHolder from "./StepContentHolder"
 import TagsInStepPost from "./TagsInStepPost"
 
 export default class stepPost extends Component {
-
   render() {
     const data = this.props.data.contentfulSteps;
-
     return (
       <Layout>
         <SEO
@@ -32,7 +30,6 @@ export default class stepPost extends Component {
             <StepContentHolder data={data} />
             <TagsInStepPost tags={data.tags}/>
           </div>
-          
         </div>
       </Layout>
     );
