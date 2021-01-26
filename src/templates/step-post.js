@@ -1,12 +1,12 @@
 import React, { Component } from "react";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import moment from "moment";
 import { DiscussionEmbed } from "disqus-react";
-import kebabCase from "lodash/kebabCase"
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Share from "../components/share";
+import TagsInStepPost from "./TagsInStepPost"
 
 import StepContentHolder from "./StepContentHolder"
 
@@ -46,17 +46,7 @@ export default class stepPost extends Component {
         <div className="site-container step-post">
           <div className="container">
             <StepContentHolder data={data} />
-            <div className="left col-md-7 col-lg-8">
-              <ul>
-                {data.tags.map(tag => (
-                  <li key={tag}>
-                    <Link to={`/tags/${kebabCase(tag)}/`}>
-                      {tag}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <TagsInStepPost tags={data.tags}/>
           </div>
         </div>
       </Layout>
