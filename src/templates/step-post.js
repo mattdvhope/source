@@ -32,6 +32,7 @@ export default class stepPost extends Component {
             <StepContentHolder data={data} />
             <TagsInStepPost tags={data.tags}/>
           </div>
+          
         </div>
       </Layout>
     );
@@ -77,17 +78,6 @@ export const pageQuery = graphql`
         childMarkdownRemark {
           html
         }
-      }
-    }
-
-    allContentfulSteps {
-      pageInfo {
-        hasNextPage
-        hasPreviousPage
-        perPage
-        currentPage
-        pageCount
-        itemCount
       }
     }
   }
