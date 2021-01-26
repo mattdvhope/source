@@ -9,9 +9,9 @@ const Footer = ({ siteName }) => {
 
 	useEffect(() => {
 	  if (/steps/.test(window.location.href)) {
-	  	setFooterLinkAndTitle(<Link to="/" style={{ color: `#fff`}}>{siteName}</Link>)
+			return setFooterLinkAndTitle(<Link to="/" style={{ color: `#fff`}}>{siteName}</Link>);
 	  }
-  });
+  }, []); // [] will prevent infinite loop!!! see https://medium.com/@andrewmyint/infinite-loop-inside-useeffect-react-hooks-6748de62871
 
   return (
     <div className="site-footer" id="footer">
