@@ -23,7 +23,6 @@ const Tags = ({ pageContext, data }) => {
                 {edges.map(({ node }) => {
                   const { slug } = node
                   const { title } = node
-                  console.log(slug)
                   return (
                     <li key={slug}>
                       <Link to={`/${slug}`}>{title}</Link>
