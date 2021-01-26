@@ -59,14 +59,14 @@ const ImgAndLinksHolder = ({data}) => {
         {ImgOrVideo()}
         <div
           id="promptScrollBox"
-          style={{width:`100%`,height:`150px`,lineHeight:`1.5em`,overflowY:`scroll`,padding:`5px`,backgroundColor:`#FCFADD`,color:`#714D03`,border:`4px double #DEBB07`}}
+          style={{width:`100%`,height:`200px`,lineHeight:`1.5em`,overflowY:`scroll`,padding:`5px`,backgroundColor:`#FCFADD`,color:`#714D03`,border:`4px double #DEBB07`}}
           dangerouslySetInnerHTML={{
             __html: prompts[promptsElementNum].promptContent.childMarkdownRemark.html
           }}
         />
         {ButtonProvidedIfNeeded()}
       </div>
-      <CtaUnderVideo data={data} />
+  {/* <CtaUnderVideo data={data} />  */}
     </div>
   )
 
