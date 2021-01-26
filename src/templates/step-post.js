@@ -14,7 +14,6 @@ export default class stepPost extends Component {
 
   render() {
     const data = this.props.data.contentfulSteps;
-    const siteurl = this.props.data.contentfulSiteInformation.siteUrl + "/";
 
     return (
       <Layout>
@@ -87,10 +86,6 @@ export const pageQuery = graphql`
       group(field: tags) {
         totalCount
       }
-    }
-
-    contentfulSiteInformation {
-      siteUrl
     }
   }
 `;
