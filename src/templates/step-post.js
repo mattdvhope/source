@@ -14,23 +14,7 @@ export default class stepPost extends Component {
 
   render() {
     const data = this.props.data.contentfulSteps;
-    const tagData = this.props.data.allContentfulSteps;
-    const disqusShortname = "RohitGupta";
-    const disqusConfig = {
-      identifier: data.id,
-      title: data.title
-    };
-
     const siteurl = this.props.data.contentfulSiteInformation.siteUrl + "/";
-    const twiteerhandle = this.props.data.contentfulSiteInformation
-      .twiteerHandle;
-    const socialConfigss = {
-      site: {
-        siteMetadata: { siteurl, twiteerhandle }
-      },
-      title: data.title,
-      slug: data.slug
-    };
 
     return (
       <Layout>
@@ -97,7 +81,6 @@ export const pageQuery = graphql`
         }
       }
 
-
     }
 
     allContentfulSteps {
@@ -108,7 +91,6 @@ export const pageQuery = graphql`
 
     contentfulSiteInformation {
       siteUrl
-      twiteerHandle
     }
   }
 `;
