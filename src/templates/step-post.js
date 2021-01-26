@@ -6,9 +6,10 @@ import { DiscussionEmbed } from "disqus-react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Share from "../components/share";
-import TagsInStepPost from "./TagsInStepPost"
+import Pagination from "../components/Pagination";
 
 import StepContentHolder from "./StepContentHolder"
+import TagsInStepPost from "./TagsInStepPost"
 
 export default class stepPost extends Component {
 
@@ -63,7 +64,6 @@ export const pageQuery = graphql`
       }
       tags
       createdAt
-
       promptsForResponse {
         promptContent {
           childMarkdownRemark {
@@ -73,18 +73,21 @@ export const pageQuery = graphql`
         buttonInvitation
         orderNumber
       }
-
       ctaLast {
         childMarkdownRemark {
           html
         }
       }
-
     }
 
     allContentfulSteps {
-      group(field: tags) {
-        totalCount
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        perPage
+        currentPage
+        pageCount
+        itemCount
       }
     }
   }
