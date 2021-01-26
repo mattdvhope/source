@@ -32,8 +32,6 @@ const Tags = ({ pageContext, data }) => {
               </ul>
               <Link to="/tags">All tags</Link>
             </div>
-
-
           </div>
           <br/>
           <br/>
