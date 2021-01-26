@@ -1,21 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { Link } from "gatsby";
 
 const Footer = ({ siteName }) => {
 
-	let footerLink;
+	const footerLink = <Link to="/steps" style={{ color: `#fff`}}>Look at some more Steps...</Link>
+	const [footerLinkAndTitle, setFooterLinkAndTitle] = useState(footerLink);
 
-  if (/steps/.test(window.location.href)) {
-  	footerLink = <Link to="/" style={{ color: `#fff`}}>{siteName}</Link>
-  } else {
-  	footerLink = <Link to="/steps" style={{ color: `#fff`}}>Look at some more Steps...</Link>
-  }
+	useEffect(() => {
+	  if (/steps/.test(window.location.href)) {
+	  	setFooterLinkAndTitle(<Link to="/" style={{ color: `#fff`}}>{siteName}</Link>)
+	  }
+  });
 
   return (
     <div className="site-footer" id="footer">
       <div className="container">
-        <span>{footerLink}</span>
+        <span>{footerLinkAndTitle}</span>
       </div>
     </div>
   );
