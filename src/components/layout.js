@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import PropTypes from "prop-types";
 import { StaticQuery, graphql } from "gatsby";
 import "bootstrap/dist/css/bootstrap.css";
@@ -13,7 +13,10 @@ if (typeof window !== "undefined") {
   require("smooth-scroll")('a[href*="#"]');
 }
 
-const Layout = ({ children, header }) => (
+const Layout = ({ children, header }) => {
+
+
+  return (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -50,7 +53,7 @@ const Layout = ({ children, header }) => (
       </>
     )}
   />
-);
+)};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired
