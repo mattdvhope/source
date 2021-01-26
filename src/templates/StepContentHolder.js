@@ -25,21 +25,20 @@ const ImgAndLinksHolder = ({data}) => {
     } 
   }
 
-  const GoToNextPrompt = () => {setPrompt(promptsElementNum + 1); window.scrollTo(0, 0);}
-  const GoToPreviousPrompt = () => {setPrompt(promptsElementNum - 1); window.scrollTo(0, 0);}
+  const scrollToTopOfBox = () => document.getElementById('promptScrollBox').scrollTop = 0;
+  const GoToNextPrompt = () => { setPrompt(promptsElementNum + 1); scrollToTopOfBox(); }
+  const GoToPreviousPrompt = () => { setPrompt(promptsElementNum - 1); scrollToTopOfBox(); }
 
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
       return (
         <div>
-          <hr/>
           <ButtonForPrompt onClick={() => GoToNextPrompt()} buttonWords={buttonWords} />
           <hr/>
         </div>)
     } else if (promptsElementNum !== prompts.length-1) {
       return (
         <div>
-          <hr/>
           <h2 onClick={() => GoToPreviousPrompt()} >⬅️&nbsp;</h2>
           <ButtonForPrompt onClick={() => GoToNextPrompt()} buttonWords={buttonWords} />
           <hr/>
@@ -58,9 +57,9 @@ const ImgAndLinksHolder = ({data}) => {
     <div id="ImgAndLinksHolder" className="container-fluid">
       <div>
         {ImgOrVideo()}
-        <div>Scroll in this box if necessary</div>
         <div
-          style={{width:`100%`,height:`150px`,lineHeight:`1.5em`,overflow:`scroll`,padding:`5px`,backgroundColor:`#FCFADD`,color:`#714D03`,border:`4px double #DEBB07`}}
+          id="promptScrollBox"
+          style={{width:`100%`,height:`150px`,lineHeight:`1.5em`,overflowY:`scroll`,padding:`5px`,backgroundColor:`#FCFADD`,color:`#714D03`,border:`4px double #DEBB07`}}
           dangerouslySetInnerHTML={{
             __html: prompts[promptsElementNum].promptContent.childMarkdownRemark.html
           }}
