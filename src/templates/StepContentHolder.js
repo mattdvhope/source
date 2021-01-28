@@ -39,7 +39,7 @@ const ImgAndLinksHolder = ({data}) => {
     } else if (promptsElementNum !== prompts.length-1) {
       return (
         <div className={`text-center`} >
-          <h2 onClick={() => GoToPreviousPrompt()} style={{ fontSize: `220%`, marginRight: `6px`, marginTop: `10px` }}>&#128072;</h2>
+          <h2 onClick={() => GoToPreviousPrompt()} style={{ fontSize: `180%`, marginRight: `6px`, marginTop: `10px` }}>&#128072;</h2>
       {/* <h2 onClick={() => GoToPreviousPrompt()} >⬅️&nbsp;</h2> */}
           <ButtonForPrompt onClick={() => GoToNextPrompt()} buttonWords={buttonWords} />
           <hr/>
