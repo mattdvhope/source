@@ -30,6 +30,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const posts = result.data.allContentfulSteps.edges;
 
+// This creates EACH Step/post page -- NOT src/pages/steps.js !!!
   posts.forEach(({ node }) => {
     createPage({
       path: node.slug,
@@ -40,8 +41,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  const tags = result.data.allContentfulSteps.group;
+// This creates pages containing a certain number of posts per page
+// It 're-creates' src/pages/steps.js with a different url !!!
+  const postsPerPage = 5;
+  const totalPageCount = Math.ceil(posts.length / postsPerPage);
+  Array.from({ length: totalPageCount }).forEach((value, i) => {
+    createPage({
+      path: i === 0 ? `/steps` : `/steps/${i + 1}`, // no `steps/1`
+      component: path.resolve("./src/templates/steps-pagination.js"),
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        totalPageCount: totalPageCount
+      },
+    });
+  });
 
+// This creates each tag page
+  const tags = result.data.allContentfulSteps.group;
   tags.forEach(tag => {
     createPage({
       path: `/tags/${_.kebabCase(tag.fieldValue)}/`,

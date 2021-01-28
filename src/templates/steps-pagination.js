@@ -6,10 +6,14 @@ import moment from "moment";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Pagination from "../components/Pagination";
 
 export default class Steps extends Component {
   render() {
     const { data } = this.props;
+    const { currentPage } = this.props.data.allContentfulSteps.pageInfo;
+    const { totalPageCount } = this.props.pathContext;
+
     return (
       <Layout>
         <SEO
@@ -52,6 +56,9 @@ export default class Steps extends Component {
                 );
               })}
             </ul>
+            <div className="text-center mt-4">
+              <Pagination totalPageCount={totalPageCount} url={"/steps"} currentPage={currentPage} />
+            </div>
           </div>
         </div>
       </Layout>
@@ -60,8 +67,13 @@ export default class Steps extends Component {
 }
 
 export const pageQuery = graphql`
-  query StepsQuery {
-    allContentfulSteps(sort: {fields: createdAt, order: DESC}) {
+  query StepsQuery($skip: Int, $limit: Int = 5, $tag: String) {
+    allContentfulSteps(
+      skip: $skip
+      limit: $limit
+      sort: { fields: createdAt, order: DESC }
+      filter: { tags: { eq: $tag } }
+    ) {
       edges {
         node {
           title
@@ -79,6 +91,14 @@ export const pageQuery = graphql`
           }
           createdAt
         }
+      }
+      pageInfo {
+        hasNextPage
+        hasPreviousPage
+        perPage
+        currentPage
+        pageCount
+        itemCount
       }
     }
   }
