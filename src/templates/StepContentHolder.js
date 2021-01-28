@@ -63,7 +63,7 @@ const ImgAndLinksHolder = ({data}) => {
         <h5 className={`text-center`} >Scroll inside yellow box if necessary</h5>
         <div
           id="promptScrollBox"
-          style={{width:`100%`,height:`140px`,lineHeight:`1.5em`,overflowY:`scroll`,padding:`5px`,backgroundColor:`#FCFADD`,color:`#714D03`,border:`4px double #DEBB07`}}
+          style={{width:`100%`,height:`190px`,lineHeight:`1.5em`,overflowY:`scroll`,padding:`5px`,backgroundColor:`#FCFADD`,color:`#714D03`,border:`4px double #DEBB07`}}
           dangerouslySetInnerHTML={{
             __html: prompts[promptsElementNum].promptContent.childMarkdownRemark.html
           }}
