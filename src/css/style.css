@@ -135,12 +135,12 @@ h2:after,
 .blogs-list .item:nth-child(2) .no-image{height:300px}
 .blog-post .details img{margin:0 auto;float:none;display:block;margin-bottom:30px}
 
-.steps-list .item .inner .gatsby-image-wrapper{width:100%;height:250px}
+.steps-list .item .inner .gatsby-image-wrapper{width:100%;height:135px} /* changed height!!! ..from 250px */
 .steps-list .item:nth-child(1) .inner .gatsby-image-wrapper,
 .steps-list .item:nth-child(2) .inner .gatsby-image-wrapper{height:135px} /* changed height!!! ..from blog */
 .steps-list .item .no-image{height:250px;width:100%;text-align:center;background:#333333b8;display:flex;justify-content:center;align-items:center}
 .steps-list .item:nth-child(1) .no-image,
-.steps-list .item:nth-child(2) .no-image{height:300px}
+.steps-list .item:nth-child(2) .no-image{height:135px}
 .step-post .details img{margin:0 auto;float:none;display:block;margin-bottom:30px}
 
 
@@ -186,7 +186,7 @@ pre{margin-bottom:0}
 .steps-list .item:nth-child(5n+1),
 .steps-list .item:nth-child(5n+2){width:50%}
 .steps-list .item:nth-child(5n+1) .gatsby-image-wrapper,
-.steps-list .item:nth-child(5n+2) .gatsby-image-wrapper{height:300px}
+.steps-list .item:nth-child(5n+2) .gatsby-image-wrapper{height:135px}
 
 .photos-list{margin-bottom:20px}
 .photos-list .slick-dots{bottom:-20px;margin:0}
