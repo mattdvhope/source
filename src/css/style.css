@@ -109,7 +109,7 @@ form>div{margin-bottom:15px}
 .steps-list .item:nth-child(2){width:50%}
 .steps-list.few-steps .item{width:50%}
 .steps-list .item .inner .link{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%;z-index:11}
-.steps-list.few-steps .item .inner .gatsby-image-wrapper{height:300px}
+.steps-list.few-steps .item .inner .gatsby-image-wrapper{height:135px} /* changed height!!! ..from 300px */
 
 
 h2,
@@ -266,7 +266,7 @@ code{background-color:#333;border-radius:3px;margin-bottom:30px;display:block;pa
     .banner .banner-details h1{font-size:34px;margin-bottom:10px}
     .banner .banner-details span{font-size:19px;margin-bottom:0}
     .blog-post .feature-img{height:300px}
-    .step-post .feature-img{height:200px} /* changed height!!! ..from blog */
+    .step-post .feature-img{height:100px} /* changed height!!! ..from blog */
 
     .post-social button{margin-bottom:10px;padding:5px 10px!important;font-size:12px!important}
     .blogs-list .item .inner .details .date{font-size:12px}
