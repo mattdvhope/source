@@ -8,7 +8,7 @@ const YoutubeVideo = ({src}) => {
         marginLeft: `auto`,
         marginRight: `auto`,
         height: `49vw`,
-        width: `81vw`,
+        width: `84.5vw`,
       }}
       src={src}
       frameBorder="0"

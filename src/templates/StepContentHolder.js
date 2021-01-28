@@ -32,22 +32,24 @@ const ImgAndLinksHolder = ({data}) => {
   const ButtonProvidedIfNeeded = () => {
     if (promptsElementNum === 0) {
       return (
-        <div>
+        <div className={`text-center`}>
           <ButtonForPrompt onClick={() => GoToNextPrompt()} buttonWords={buttonWords} />
           <hr/>
         </div>)
     } else if (promptsElementNum !== prompts.length-1) {
       return (
-        <div>
-          <h2 onClick={() => GoToPreviousPrompt()} >⬅️&nbsp;</h2>
+        <div className={`text-center`} >
+          <h2 onClick={() => GoToPreviousPrompt()} style={{ fontSize: `220%`, marginRight: `6px`, marginTop: `10px` }}>&#128072;</h2>
+      {/* <h2 onClick={() => GoToPreviousPrompt()} >⬅️&nbsp;</h2> */}
           <ButtonForPrompt onClick={() => GoToNextPrompt()} buttonWords={buttonWords} />
           <hr/>
         </div>)
     } else if (promptsElementNum === prompts.length-1) {
       return (
-        <div>
+        <div className={`text-center`}>
           <br/>
-          <h1 onClick={() => GoToPreviousPrompt()} >⬅️&nbsp;</h1>
+          <h1 onClick={() => GoToPreviousPrompt()} style={{ fontSize: `310%`, marginTop: `-5px`, marginBottom: `-5px` }}>&#128072;</h1>
+      {/* <h1 onClick={() => GoToPreviousPrompt()} >⬅️&nbsp;</h1> */}    
           <hr/>
         </div>)
     }
@@ -57,9 +59,11 @@ const ImgAndLinksHolder = ({data}) => {
     <div id="ImgAndLinksHolder" className="container-fluid">
       <div>
         {ImgOrVideo()}
+        <h4 className={`text-center`} >{data.title}</h4>
+        <h5 className={`text-center`} >Scroll inside yellow box if necessary</h5>
         <div
           id="promptScrollBox"
-          style={{width:`100%`,height:`200px`,lineHeight:`1.5em`,overflowY:`scroll`,padding:`5px`,backgroundColor:`#FCFADD`,color:`#714D03`,border:`4px double #DEBB07`}}
+          style={{width:`100%`,height:`140px`,lineHeight:`1.5em`,overflowY:`scroll`,padding:`5px`,backgroundColor:`#FCFADD`,color:`#714D03`,border:`4px double #DEBB07`}}
           dangerouslySetInnerHTML={{
             __html: prompts[promptsElementNum].promptContent.childMarkdownRemark.html
           }}
