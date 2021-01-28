@@ -9,6 +9,7 @@
 
 .page-number {
     transition: unset !important;
+    font-size: 150% !important;
 }
 
 [data-pagination],
